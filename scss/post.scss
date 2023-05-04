@@ -301,6 +301,7 @@ h6, .h6 {
 
 h2, .h2 {
     color: #6F0E62 !important;
+    margin-left: 1.3rem;
 }
 
 /** SECONDARY NAVIGATION **/
@@ -317,6 +318,11 @@ h2, .h2 {
 }
 
 /** FOOTER **/
+
+#page.drawers {
+     padding-left: 0px; 
+     padding-right: 0px; 
+}
 
 #page-footer.nova-foot {
     padding-bottom: 30px !important;
@@ -689,3 +695,39 @@ h2, .h2 {
     border-radius: 20px;
     border: 3px solid #f8f9fa;
 }
+
+/**COLORES DE ICONOS POR UNIDADES EN CURSO UNICEF**/
+
+.course-65 #section-1 .activityiconcontainer {
+    background-color:  #8EBE21 ;
+}
+
+.course-65 #section-2 .activityiconcontainer {
+    background-color:  #009FA4 ;
+}
+
+.course-65 #section-3 .activityiconcontainer {
+    background-color:  #63519C ;
+}
+
+.course-65 #section-4 .activityiconcontainer {
+    background-color:  #D32F2F ;
+}
+
+.course-65 #section-5 .activityiconcontainer {
+    background-color:  #FF802C ;
+}
+
+.course-65 #section-6 .activityiconcontainer {
+    background-color:  #CC00CC ;
+}
+
+/**PROBLEMA de vista tamaño letra en descripción de CADA TEMA**/
+
+.description .course-description-item {
+    font-size: 100%;
+    background-color: #f8f9fa;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
