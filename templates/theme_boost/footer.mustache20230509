@@ -1,0 +1,36 @@
+
+{{!
+}}
+
+
+<footer id="page-footer" class="py-3 text-light nova-foot" style="background-color:#fff;" aria-label="Footer del sitio"> 
+  <div class="container-fluid">
+    <div id="course-footer">
+     {{{ output.course_footer }}} 
+    </div>
+    <div class="links clearfix">
+      <div class="adres">
+        <div class="social" aria-label="Redes sociales">
+          <a class="red insta" aria-label="Instagram" href="https://www.instagram.com/DefDelPublico" target="_blank"></a>
+          <a class="red face" aria-label="Facebook" href="https://www.facebook.com/DefensoriaDelPublico" target="_blank"></a>
+          <a class="red twi" aria-label="Twitter" href="https://twitter.com/DefdelPublico" target="_blank"></a>
+          <a class="red youtube" aria-label="Youtube" href="https://www.youtube.com/user/DefensoriaDelPublico" target="_blank"></a>
+        </div>
+        <div class="detail">
+          <p>Defensoría del Público  
+            <br> de Comunicación Audiovisual <br> <a href="https://defensadelpublico.gob.ar/">defensadelpublico.gob.ar</a> </p>
+          <div>
+            Adolfo Alsina 1470 - CP 1088 -  <br>
+            Ciudad Autónoma de <br>
+            Buenos Aires | Argentina<br>
+            Conmutador: (+54) (011) 3754-1600
+          </div>
+        </div>
+      </div> 
+    </div>
+    {{{ output.standard_footer_html }}}
+    {{{ output.standard_end_of_body_html }}}
+  </div>
+
+</footer>
+
