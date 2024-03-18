@@ -1,0 +1,34 @@
+stages:
+  - build
+  - release
+
+
+variables:
+  MOODLE_PACKAGE_NAME: "theme_defensoriapublico"
+  THEME_FILE_NAME: "${MOODLE_PACKAGE_NAME}-${CI_COMMIT_TAG}.zip"
+  PACKAGE_REGISTRY_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/${MOODLE_PACKAGE_NAME}/${CI_COMMIT_TAG}"
+  THEME_URL: "${PACKAGE_REGISTRY_URL}/${THEME_FILE_NAME}"
+
+
+build and upload:
+  image: alpine:latest
+  stage: build
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - apk add --update --no-cache zip curl
+    - rm -rf .git
+    - zip -r "${THEME_FILE_NAME}" .
+    - |
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "${THEME_FILE_NAME}" "${THEME_URL}"
+
+
+release:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - |
+      release-cli create --name "Release ${CI_COMMIT_TAG}" --tag-name "${CI_COMMIT_TAG}" \
+      --assets-link "{\"name\":\"${THEME_FILE_NAME}\",\"url\":\"${THEME_URL}\"}"
