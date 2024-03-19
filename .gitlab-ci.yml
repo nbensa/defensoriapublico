@@ -17,8 +17,7 @@ build and upload:
     - if: $CI_COMMIT_TAG
   script:
     - apk add --update --no-cache zip curl
-    - rm -rf .git
-    - zip -r "${THEME_FILE_NAME}" .
+    - zip -r "${THEME_FILE_NAME}" defensoriapublico
     - |
       curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "${THEME_FILE_NAME}" "${THEME_URL}"
 
